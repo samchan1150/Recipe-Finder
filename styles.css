@@ -49,3 +49,11 @@ button:hover {
     padding: 10px;
     margin: 10px 0;
 }
+
+select {
+    width: 30%;
+    padding: 10px;
+    margin: 10px 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
