@@ -227,6 +227,20 @@ window.onclick = function(event) {
     }
 }
 
+// Event listener for the "I'm Feeling Lucky" button
+document.getElementById('lucky').addEventListener('click', () => {
+    fetchRandomMeal();
+});
+
+async function fetchRandomMeal() {
+    const response = await fetch('https://www.themealdb.com/api/json/v1/1/random.php');
+    const data = await response.json();
+    const meal = data.meals[0]; // Get the random meal
+
+    // Display the random meal
+    displayResults([meal]); // Pass the meal in an array to displayResults
+}
+
 // Load categories, areas, and ingredients on page load
 loadCategories();
 loadAreas();

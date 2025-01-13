@@ -42,6 +42,7 @@ input[type="text"], select {
 
 button {
     padding: 10px 15px;
+    margin: 10px 0;
     background: #ffcc00; /* Gold color for the button */
     color: #2c2c2c; /* Dark text color */
     border: none;
