@@ -21,7 +21,17 @@ h1 {
 }
 
 input[type="text"], select {
-    width: 100%;
+    width: 95%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #555; /* Darker border */
+    border-radius: 5px;
+    background-color: #444; /* Dark background for input and select */
+    color: #ffffff; /* Light text color */
+}
+
+.filters {
+    width: 90%;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #555; /* Darker border */
@@ -70,6 +80,7 @@ button:hover {
 h3 {
     color: #ffcc00; /* Gold color for recipe titles */
 }
+
 /* Modal styles */
 .modal {
     display: none; /* Hidden by default */
