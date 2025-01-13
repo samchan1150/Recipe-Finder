@@ -130,7 +130,15 @@ async function fetchMealDetails(mealId) {
         if (step.includes("TO MAKE") || step.match(/STEP \d+/)) {
             const stepDiv = document.createElement('div');
             stepDiv.classList.add('step');
-            stepDiv.innerHTML = `<strong>${step}</strong>`; // Display the step title
+
+            // If the step contains a colon, make the text after the colon bold
+            if (step.includes(":")) {
+                const [title, description] = step.split(":");
+                stepDiv.innerHTML = `<strong>${title}:</strong> ${description.trim()}`; // Title in bold
+            } else {
+                stepDiv.innerHTML = `<strong>${step}</strong>`; // Display the step title
+            }
+
             instructionsContainer.appendChild(stepDiv);
         } else {
             // For regular instructions, append them as a continuation of the last step
