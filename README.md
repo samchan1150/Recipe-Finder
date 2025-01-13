@@ -64,7 +64,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For any questions or feedback, please contact:
 
-- **Your Name**: [chanyeesum1@gmail.com](chanyeesum1@gmail.com)
+- **Gmail**: [chanyeesum1@gmail.com](chanyeesum1@gmail.com)
 - **GitHub**: [samchan1150](https://github.com/samchan1150)
 
 ---
