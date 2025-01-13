@@ -70,7 +70,6 @@ button:hover {
 h3 {
     color: #ffcc00; /* Gold color for recipe titles */
 }
-
 /* Modal styles */
 .modal {
     display: none; /* Hidden by default */
@@ -90,7 +89,7 @@ h3 {
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 60%; /* Could be more or less, depending on screen size */
     border-radius: 8px;
     color: #ffffff;
 }
@@ -107,4 +106,20 @@ h3 {
     color: #ffffff;
     text-decoration: none;
     cursor: pointer;
+}
+
+/* Smaller image in the modal */
+#modalImage {
+    width: 60%; /* Adjusted to make the image smaller */
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Steps styling */
+#modalInstructions {
+    margin-top: 15px;
+}
+
+.step {
+    margin-bottom: 10px;
 }

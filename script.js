@@ -118,13 +118,34 @@ async function fetchMealDetails(mealId) {
         }
     }
 
-    document.getElementById('modalInstructions').textContent = meal.strInstructions;
+    // Prepare steps
+    const instructions = meal.strInstructions.split('\n').filter(step => step.trim() !== '');
+    const instructionsContainer = document.getElementById('modalInstructions');
+    instructionsContainer.innerHTML = ''; // Clear previous instructions
+
+    // Split instructions into steps based on the pattern of "TO MAKE" or numbered steps
+    let stepCount = 1;
+    instructions.forEach(step => {
+        // Check if the step starts with "TO MAKE" or is a numbered instruction
+        if (step.includes("TO MAKE") || step.match(/STEP \d+/)) {
+            const stepDiv = document.createElement('div');
+            stepDiv.classList.add('step');
+            stepDiv.innerHTML = `<strong>${step}</strong>`; // Display the step title
+            instructionsContainer.appendChild(stepDiv);
+        } else {
+            // For regular instructions, append them as a continuation of the last step
+            const lastStepDiv = instructionsContainer.lastChild;
+            if (lastStepDiv) {
+                lastStepDiv.innerHTML += ` ${step}`; // Append to the last step
+            }
+        }
+    });
+
     document.getElementById('modalYouTubeLink').href = meal.strYoutube;
 
     // Show the modal
     document.getElementById('recipeModal').style.display = "block";
 }
-
 // Close the modal when the user clicks on <span> (x)
 document.querySelector('.close').onclick = function() {
     document.getElementById('recipeModal').style.display = "none";
